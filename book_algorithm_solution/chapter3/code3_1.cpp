@@ -3,7 +3,7 @@
 using namespace std;
 
 // 入力:
-//      整数N
+//  整数N
 //  整数v
 //  N個の整数a[0], a[1], ..., a[N-1]
 //
