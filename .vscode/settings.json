@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.smi": "sml",
-        "ostream": "cpp",
-        "functional": "cpp",
-        "iostream": "cpp"
-    }
-}
