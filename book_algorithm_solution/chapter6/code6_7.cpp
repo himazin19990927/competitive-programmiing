@@ -21,6 +21,8 @@ int main() {
     }
 
     // 二分探索
+    // x = 0..Mの数字を考え、ペナルティをx以下にすることが出来るかどうかを考える
+    // xの最小値が、最終的なペナルティとなる
     long long left = 0, right = M;
     while(right - left > 1) {
         long long mid = (left + right) / 2;
@@ -38,6 +40,8 @@ int main() {
         }
 
         // 制限時間が差し迫っている順にソート
+        // すべてのt[i](各風船の制限時間)が、
+        // その風船を割る時間i未満であることを確かめる
         sort(t.begin(), t.end());
         for(int i = 0; i < N; i++) {
             // 時間切れ発生の場合はfalse
