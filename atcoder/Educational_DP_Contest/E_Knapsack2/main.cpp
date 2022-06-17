@@ -9,7 +9,6 @@ template <class T> void chmin(T &a, T b) {
     }
 }
 
-// 未回答
 int main() {
     int N, W;
     cin >> N >> W;
@@ -27,19 +26,19 @@ int main() {
 
     // DPテーブル
     vector<vector<long long>> dp(
-        N + 1,
-        vector<long long>(value_sum + 1, numeric_limits<long long>::max()));
+        N + 1, vector<long long>(value_sum + 1, 1000000000 + 1));
     dp[0][0] = 0;
 
     // DPループ
-    for(int i = 1; i <= N; i++) {
+    // i個目までの品物で、価値がvであるとき、その重さを最小化する
+    for(int i = 0; i < N; i++) {
         for(int v = 0; v <= value_sum; v++) {
             // 品物iを持ち帰らない場合
-            chmin(dp[i][v], dp[i - 1][v]);
+            chmin(dp[i + 1][v], dp[i][v]);
 
             // 品物iを持ち帰る場合
-            if(v >= vs[i]) {
-                chmin(dp[i][v], dp[i - 1][v - vs[i]] + ws[i]);
+            if(v + vs[i] <= value_sum) {
+                chmin(dp[i + 1][v + vs[i]], dp[i][v] + ws[i]);
             }
         }
     }
