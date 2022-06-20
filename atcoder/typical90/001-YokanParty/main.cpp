@@ -5,6 +5,7 @@ using namespace std;
 // 001-Yokan Party
 // https://atcoder.jp/contests/typical90/tasks/typical90_a
 
+// 問題文
 // 左右の長さが L [cm] のようかんがあります。
 // N 個の切れ目が付けられており、左から i 番目の切れ目は左から A[i] [cm] の位置にあります。
 // あなたは N 個の切れ目のうち K 個を選び、ようかんを K+1 個のピースに分割したいです。
